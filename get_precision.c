@@ -11,13 +11,14 @@
 int get_precision(const char *format, int *i, va_list list)
 {
 	int precision = -1;
+	int curr_i;
 
 	if (format[*i + 1] != '.')
 	{
 		return (precision);
 	}
 
-	int curr_i = *i + 2;
+	curr_i = *i + 2;
 
 	while (format[curr_i] != '\0')
 	{

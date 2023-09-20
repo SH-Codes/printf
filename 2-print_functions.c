@@ -42,7 +42,7 @@ int print_pointer(va_list types, char buffer[],
 		padd = '0';
 	if (flags & F_PLUS)
 		extra_c = '+', length++;
-	else if (flags & F_SPACE)
+	else if (flags & F_SPCE)
 		extra_c = ' ', length++;
 
 	ind++;
@@ -140,7 +140,7 @@ int print_reverse(va_list types, char buffer[],
  * print_rot13string - Print a string in rot13.
  * @types: Lista of arguments
  * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
+ * @flags: Calculates active flags
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier

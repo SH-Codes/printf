@@ -1,6 +1,23 @@
 #include "main.h"
 #include <stddef.h>
 #include <stdarg.h>
+
+/**
+ * print_buffer - helper function for _printf
+ * @buffer: char type array
+ * @buff_ind: int type pointer - represents length
+ * Return: void
+ */
+
+ void print_buffer(char buffer[], int *buff_ind)
+ {
+	 if (*buff_ind > 0)
+	 {
+		 write(1, &buffer[0], *buff_ind);
+	 }
+	 *buff_ind = 0;
+ }
+
 /**
  *  _printf - has similar characteristics as the standard printf
  *  @format: char type pointer
@@ -51,20 +68,4 @@ int _printf(const char *format, ...)
 	print_buffer(buffer, &buff_ind);
 	va_end(list);
 	return (printed_chars);
-}
-
-/**
- * print_buffer - helper function for _printf
- * @buffer: char type array
- * @buff_ind: int type pointer - represents length
- * Return: void
- */
-
-void print_buffer(char buffer[], int *buff_ind)
-{
-	if (*buff_ind > 0)
-	{
-		write(1, &buffer[0], *buff_ind);
-	}
-	*buff_ind = 0;
 }
